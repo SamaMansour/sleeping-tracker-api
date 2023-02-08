@@ -1,8 +1,21 @@
-const express = require('express');
+const express = require("express");
+const PORT = 1337;
 const app = express();
-const cors = require('cors');
+require("./db/connection");
+const authRoute = require("./api/routes/auth");
+const path = require("path");
 
-app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
-app.listen(1337 )
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Header", "*");
+
+  next();
+});
+
+app.use("/api/v1/user", authRoute);
+
+app.listen(PORT);
