@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../../models/user");
-const jwt = require("jsonwebtoken");
 
 
 router.post("/register", async (req, res) => {
@@ -21,6 +20,18 @@ router.post("/register", async (req, res) => {
 	}
   });
 	
-  
+router.post("/login", async (req, res) => {
+	
+	const user = await User.findOne({
+		email: req.body.email,
+		password: req.body.email
+	})
 
+	if(user){
+		return res.json({status: 'ok', user: true})
+	}else{
+		return res.json({status: 'error', user: false})
+	}
+
+});
 module.exports = router;
