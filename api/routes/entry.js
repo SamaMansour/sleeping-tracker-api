@@ -31,11 +31,21 @@ router.get("/entries/:id", async (req, res) => {
 
 router.put("/entries/:id/edit", async (req, res) => {
   try {
-    const blog = await entryService.updateEntry(req.params.id, req.body);
-    res.json({ data: blog, status: "success" });
+    const entry = await entryService.updateEntry(req.params.id, req.body);
+    res.json({ data: entry, status: "success" });
   } catch (err) {
     res.status(500);
   }
+});
+
+router.delete("/entries/:id/delete", async (req, res) => {
+  try {
+    const entry = await entryService.deleteEntry(req.params.id);
+    res.json({ data: entry, status: "success" });
+  } catch (err) {
+    res.status(500);
+  }
+ 
 });
 	
 module.exports = router;
