@@ -5,6 +5,7 @@ const PORT = 1337;
 const app = express();
 const connectDB =require("./db/connection");
 const authRoute = require("./api/routes/auth");
+const entryRoute = require("./api/routes/entry")
 const path = require("path");
 
 
@@ -33,5 +34,6 @@ const corsOptions ={
 app.use(cors(corsOptions));
 
 app.use("/", authRoute);
+app.use("/api/v1", entryRoute);
 
 app.listen(PORT);
