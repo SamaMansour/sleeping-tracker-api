@@ -4,8 +4,9 @@ const dotenv = require('dotenv');
 const colors = require("colors");
 const PORT = 1337;
 const connectDB =require("./config/connection");
-const authRoute = require("./routes/userRoutes");
-const entryRoute = require("./routes/entryRoutes")
+const authRoute = require("./routes/users");
+const loginRoute = require ("./routes/login");
+
 const path = require("path");
 
 
@@ -17,8 +18,9 @@ dotenv.config( { path : '.env'} )
 connectDB();
 
 
-app.use("/", authRoute);
-app.use("/api/v1", entryRoute);
+app.use("/users", authRoute);
+app.use("/login", loginRoute)
+
 
 
 app.use((req, res, next) => {

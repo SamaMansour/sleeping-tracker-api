@@ -1,27 +1,28 @@
-const mongoose = require("mongoose");
-const entrySchema = mongoose.Schema(
-  {
-    sleepTime: {
-      type: String,
-      required: [true, "Please select a valid sleep time"],
-    },
-    wakeUpTime: {
-      type: String,
-      required: [true, "Please select a valid wake up time"],
-    },
-    date: {
-      type: Date,
-      required: [true, "The date is not valid"],
-    },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
+const mongoose = require("mongoose")
 
-module.exports = mongoose.model("Entry", entrySchema);
+const EntrySchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    autopopulate: { maxDepth: 2 }
+  },
+  date: {
+    type: String,
+    required: true
+  },
+  sleepTime: { 
+    type: String,
+    required: [true, "The sleeptime is required"]
+  },
+  wakeupTime: {
+    type: String,
+    required: [true, "The wakeuptime is required"]
+  },
+  duration: { 
+    type: String,
+    required: [true, "The duration is required"]
+  }
+})
+
+
+module.exports = mongoose.model("Entry", EntrySchema)
