@@ -6,6 +6,7 @@ const PORT = 1337;
 const connectDB =require("./config/connection");
 const authRoute = require("./routes/users");
 const loginRoute = require ("./routes/login");
+const entryRoute = require("./routes/entries");
 
 const path = require("path");
 
@@ -19,7 +20,9 @@ connectDB();
 
 
 app.use("/users", authRoute);
-app.use("/login", loginRoute)
+app.use("/login", loginRoute);
+app.use("/entries", entryRoute);
+
 
 
 
