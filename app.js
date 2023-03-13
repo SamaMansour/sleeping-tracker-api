@@ -7,7 +7,7 @@ const connectDB =require("./config/connection");
 const authRoute = require("./routes/users");
 const loginRoute = require ("./routes/login");
 const entryRoute = require("./routes/entries");
-
+const resetPasswordRoute = require("./routes/reset-password");
 const path = require("path");
 
 
@@ -22,6 +22,7 @@ connectDB();
 app.use("/users", authRoute);
 app.use("/login", loginRoute);
 app.use("/entries", entryRoute);
+app.use("/api/password-reset", resetPasswordRoute);
 
 
 

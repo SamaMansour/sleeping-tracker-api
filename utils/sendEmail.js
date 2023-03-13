@@ -10,6 +10,7 @@ const sendEmail = async(email, subject, text) =>{
       auth: {
         user: testAccount.user, 
         pass: testAccount.pass, 
+      }
     
     });
 
