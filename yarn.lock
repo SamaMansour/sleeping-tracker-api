@@ -1114,7 +1114,7 @@
   "resolved" "https://registry.npmjs.org/express-async-handler/-/express-async-handler-1.2.0.tgz"
   "version" "1.2.0"
 
-"express@^4.18.2":
+"express@^4.18.2", "express@>=4.0.0":
   "integrity" "sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ=="
   "resolved" "https://registry.npmjs.org/express/-/express-4.18.2.tgz"
   "version" "4.18.2"
@@ -1929,6 +1929,18 @@
   "version" "5.5.0"
   dependencies:
     "has-flag" "^3.0.0"
+
+"swagger-ui-dist@>=4.11.0":
+  "integrity" "sha512-n7AT4wzKIPpHy/BGflJOepGMrbY/7Cd5yVd9ptVczaJGAKScbVJrZxFbAE2ZSZa8KmqdQ0+pOs3/5mWY5tSMZQ=="
+  "resolved" "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-4.18.1.tgz"
+  "version" "4.18.1"
+
+"swagger-ui-express@^4.6.2":
+  "integrity" "sha512-MHIOaq9JrTTB3ygUJD+08PbjM5Tt/q7x80yz9VTFIatw8j5uIWKcr90S0h5NLMzFEDC6+eVprtoeA5MDZXCUKQ=="
+  "resolved" "https://registry.npmjs.org/swagger-ui-express/-/swagger-ui-express-4.6.2.tgz"
+  "version" "4.6.2"
+  dependencies:
+    "swagger-ui-dist" ">=4.11.0"
 
 "tar@^6.1.11":
   "integrity" "sha512-jdIBIN6LTIe2jqzay/2vtYLlBHa3JF42ot3h1dW8Q0PaAG4v8rm0cvpVePtau5C6OKXGGcgO9q2AMNSWxiLqKw=="
